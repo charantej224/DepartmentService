@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: DepartmentService
+    
+server:
+  port: 8093
+  
+logging:
+  level:
+    com.charan.* : DEBUG
+    
