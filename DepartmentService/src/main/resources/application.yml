@@ -9,3 +9,11 @@ logging:
   level:
     com.charan.* : DEBUG
     
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8020/eureka
+      healthcheck:
+      enabled: true
+    registry-fetch-interval-seconds: 60
+    
