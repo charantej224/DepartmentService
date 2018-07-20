@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,11 +17,14 @@ public class DepartmentDetailsController {
 	@Autowired
 	ReferenceDataManager referenceDataManager;
 	
+	@Value("${server.port}")
+	String serverPort;
+	
 	Logger logger = Logger.getLogger(DepartmentDetailsController.class);
 	
 	@GetMapping("getAllDepartments")
 	public List<Department> getDepartments(){
-		return referenceDataManager.getDepartmentList();
+		return referenceDataManager.getDepartmentList(serverPort);
 		
 	}
 
