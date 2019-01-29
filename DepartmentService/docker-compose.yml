@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: deptsvc
+    build: .
+    container_name: deptCont
+    restart: always
+    ports:
+      - "8093:8093"
